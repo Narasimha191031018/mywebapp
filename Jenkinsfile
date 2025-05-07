@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        WAR_FILE = "target/mywebapp.war"
+        WAR_FILE = "mywebapp.war"
         TOMCAT_HOME = "D:\DevopsTaining\All softwares\apache-tomcat-9.0.104\apache-tomcat-9.0.104\bin"
     }
     stages {
