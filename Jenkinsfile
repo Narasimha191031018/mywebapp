@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven_3.8.6'   // Replace with your Maven tool name
-        jdk 'JDK_11'          // Replace with your JDK tool name
+        maven 'MAVEN_HOME'   // Replace with your Maven tool name
+        jdk 'JDK_17'          // Replace with your JDK tool name
     }
     environment {
         WAR_FILE = "target/mywebapp.war"
