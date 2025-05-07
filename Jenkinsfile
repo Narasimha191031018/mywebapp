@@ -1,21 +1,26 @@
 pipeline {
     agent any
     environment {
-        WAR_FILE = "target/mywebapp.war"
+        WAR_FILE = "target/mywebapp.war"  // Path to WAR file
         TOMCAT_HOME = "D:/DevopsTaining/All softwares/apache-tomcat-9.0.104/apache-tomcat-9.0.104"
     }
     stages {
         stage('Checkout Code') {
             steps {
-                // Correct Git checkout for public repository
                 git 'https://github.com/Narasimha191031018/mywebapp.git'
+            }
+        }
+        stage('Build WAR') {
+            steps {
+                // Assuming you are using Maven to build the WAR file
+                bat 'mvn clean install'
             }
         }
         stage('Deploy to Tomcat') {
             steps {
                 bat """
                     echo Deploying WAR file...
-                    copy %WAR_FILE% "%TOMCAT_HOME%\\webapps\\" /Y
+                    copy "%WAR_FILE%" "%TOMCAT_HOME%\\webapps\\" /Y
                 """
             }
         }
