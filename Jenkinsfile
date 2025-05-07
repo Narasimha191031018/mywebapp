@@ -1,7 +1,11 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven_3.8.6'   // Replace with your Maven tool name
+        jdk 'JDK_11'          // Replace with your JDK tool name
+    }
     environment {
-        WAR_FILE = "target/mywebapp.war"  // Path to WAR file
+        WAR_FILE = "target/mywebapp.war"
         TOMCAT_HOME = "D:/DevopsTaining/All softwares/apache-tomcat-9.0.104/apache-tomcat-9.0.104"
     }
     stages {
@@ -12,7 +16,6 @@ pipeline {
         }
         stage('Build WAR') {
             steps {
-                // Assuming you are using Maven to build the WAR file
                 bat 'mvn clean install'
             }
         }
