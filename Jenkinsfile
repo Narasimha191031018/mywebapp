@@ -1,8 +1,8 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven_3.8.6'   // Replace with your Maven tool name
-        jdk 'JDK_17'          // Replace with your JDK tool name
+        maven 'Maven_3.8.6'  // ✅ Matches Jenkins tool name exactly
+        jdk 'JDK_17'         // ✅ Matches Jenkins tool name exactly
     }
     environment {
         WAR_FILE = "target/mywebapp.war"
