@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'MAVEN_HOME'   // Replace with your Maven tool name
+        maven 'Maven_3.8.6'   // Replace with your Maven tool name
         jdk 'JDK_17'          // Replace with your JDK tool name
     }
     environment {
